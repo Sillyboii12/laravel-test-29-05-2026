@@ -23,6 +23,7 @@
             <div class="bg-red-200 p-4 mb-4 rounded text-red-700">
                 <ul class="list-disc ml-5">
                     @foreach ($errors->all() as $error)
+                        <p>{{$error}}</p>
                     @endforeach
                 </ul>
             </div>
