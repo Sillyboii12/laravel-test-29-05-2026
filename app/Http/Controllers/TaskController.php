@@ -22,7 +22,7 @@ class TaskController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'required|string',
+            'description' => 'nullable|string',
         ]);
 
         Task::create($validated);
@@ -44,12 +44,12 @@ class TaskController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'required|string',
+            'description' => 'nullable|string',
         ]);
 
         $task->update($validated);
 
-        return redirect()->route('tasks.index')->with('success', 'Task updated successfully.');
+        return redirect()->route('tasks.show', $task)->with('success', 'Task updated successfully.');
     }
 
     public function updateStatus(Request $request, Task $task)
