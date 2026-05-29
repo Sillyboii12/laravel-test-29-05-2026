@@ -15,9 +15,10 @@
                 </div>
 
                 <div class="flex gap-4">
-                    <a href="{{ route('tasks.edit', $task->id) }}" class="text-blue-500">Edit</a>
+                    <a href="{{ route('tasks.edit', $task) }}" class="text-blue-500">Edit</a>
+                    <a href="{{ route('tasks.show', $task) }}" class="text-blue-500">Show</a>
 
-                    <form action="{{ route('tasks.destroy', $task->id) }}" method="POST" onsubmit="return confirm('Delete this task?')">
+                    <form action="{{ route('tasks.destroy', $task) }}" method="POST" onsubmit="return confirm('Delete this task?')">
                         @csrf
                         @method('DELETE')
                         <button class="text-red-500">Delete</button>
