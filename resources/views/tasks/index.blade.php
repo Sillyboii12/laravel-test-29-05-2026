@@ -8,7 +8,7 @@
         @forelse ($tasks as $task)
             <li class="border-b p-4 flex justify-between items-center">
                 <div class="flex items-center">
-                    <a href="{{ route('tasks.edit') }}" class="ml-2 {{ $task->isCompleted() ? 'line-through text-gray-400' : '' }}">
+                    <a href="{{ route('tasks.edit', $task) }}" class="ml-2 {{ $task->isCompleted() ? 'line-through text-gray-400' : '' }}">
                         {{ $task->title }}
                     </a>
                     <span class="ml-2 text-xs bg-gray-200 px-2 py-1 rounded text-gray-600">{{ ucfirst(str_replace('_', ' ', $task->status)) }}</span>
