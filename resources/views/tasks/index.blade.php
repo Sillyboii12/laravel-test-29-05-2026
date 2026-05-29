@@ -11,6 +11,9 @@
                     <a href="{{ route('tasks.show', $task) }}" class="ml-2 {{ $task->isCompleted() ? 'line-through text-gray-400' : '' }}">
                         {{ $task->title }}
                     </a>
+                    @if ($task->identificator != null)
+                        <p>|Original task id:{{$task->identificator}}</p>
+                    @endif
                     <span class="ml-2 text-xs bg-gray-200 px-2 py-1 rounded text-gray-600">{{ ucfirst(str_replace('_', ' ', $task->status)) }}</span>
                 </div>
 
